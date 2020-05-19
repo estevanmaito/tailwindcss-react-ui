@@ -7,7 +7,7 @@
     "sourceType": "module"
   },
   "extends": ["standard", "plugin:react/recommended", "prettier"],
-  "plugins": ["prettier", "react"],
+  "plugins": ["prettier"],
   "rules": {
     "no-unused-vars": [
       2,
