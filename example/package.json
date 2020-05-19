@@ -12,7 +12,7 @@
     "tailwindcss": "^1.4.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
