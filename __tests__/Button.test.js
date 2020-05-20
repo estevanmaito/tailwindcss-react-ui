@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import Button from '../src/Button'
+import Button from '../src/components/Button'
 
 describe('Button', () => {
   it('should render without crashing', () => {

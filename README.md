@@ -63,3 +63,43 @@ Clone this repo, get into `examples` folder and `npm install`. It will create a 
 | transition | 'colors'            |
 | duration   | '150'               |
 | rounded    | 'lg'                |
+
+## Developing
+
+This will get you running the project and a live interface.
+
+```sh
+git clone git@github.com:estevanmaito/tailwindcss-react-ui.git
+cd tailwindcss-react-ui
+npm install
+npm run dev
+```
+
+Then in another terminal, watch tests as you develop
+
+```sh
+npm run test:watch
+```
+
+When ready to commit something, run the linter and test for coverage (you can skip this as it will run automatically when you commit, but if theres something wrong with your code, you'll probably need to run the commands after)
+
+```sh
+npm run test:coverage
+npm run lint
+```
+
+If there are errors with your lint, you can try to fix them automatically using
+
+```sh
+npm run lint:fix
+```
+
+When ready, add it to git and instead of `git commit`, run
+
+```sh
+npm run cz
+```
+
+This will present you with some questions that will result in a standard commit that will later be used to build and publish this package.
+
+Then you're ready to PR.

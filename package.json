@@ -8,6 +8,9 @@
     "README.md"
   ],
   "scripts": {
+    "build:tailwind": "npx tailwindcss build style/tailwind.css -o style/output.css",
+    "predev": "npm run build:tailwind",
+    "dev": "styleguidist server",
     "cz": "git-cz",
     "test": "jest",
     "codecov": "codecov",
@@ -48,6 +51,7 @@
     "babel-loader": "8.1.0",
     "codecov": "3.6.5",
     "commitizen": "4.1.2",
+    "css-loader": "3.5.3",
     "cz-conventional-changelog": "3.2.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
@@ -65,8 +69,10 @@
     "prettier": "2.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-styleguidist": "11.0.6",
     "rimraf": "3.0.2",
     "semantic-release": "^17.0.7",
+    "style-loader": "1.2.1",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11"
   },
