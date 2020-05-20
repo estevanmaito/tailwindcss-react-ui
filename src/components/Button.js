@@ -3,54 +3,7 @@ import classNames from 'classnames'
 import makeClasses from '../utils/makeClasses'
 import PropTypes from 'prop-types'
 
-Button.propTypes = {
-  /** Defines height */
-  h: PropTypes.string,
-  /** Defines left and right padding */
-  px: PropTypes.string,
-  /** Defines text color */
-  text: PropTypes.string,
-  /** Defines background color */
-  bg: PropTypes.string,
-  /** Defines hover styles */
-  hover: PropTypes.string,
-  /** Defines focus styles */
-  focus: PropTypes.string,
-  /** Defines transtion properties */
-  transition: PropTypes.string,
-  /** Set transition duration */
-  duration: PropTypes.string,
-  /** Defines border radius */
-  rounded: PropTypes.string,
-  /** Defines the HTML element used
-   * @default 'button
-   */
-  tag: PropTypes.oneOf(['button', 'a']),
-  /** Only works with anchor tag. Use with tag="a" */
-  href: PropTypes.string,
-  /** Extend current design with new styles (ones that are not listed here as props) */
-  extend: PropTypes.string,
-  /** Reset styling. Use this with extend to add your own style. */
-  reset: PropTypes.bool,
-  /** Button label */
-  children: PropTypes.any,
-  /** Disables the button */
-  disabled: PropTypes.bool,
-}
-
-Button.defaultProps = {
-  h: '10',
-  px: '5',
-  text: 'normal indigo-100',
-  bg: 'indigo-700',
-  hover: 'bg-indigo-800',
-  focus: 'shadow-outline',
-  transition: 'colors',
-  duration: '150',
-  rounded: 'lg',
-}
-
-function Button(props) {
+const Button = React.forwardRef(function Button(props, ref) {
   const {
     h,
     px,
@@ -99,11 +52,59 @@ function Button(props) {
       className={reset ? classesWithReset : classes}
       href={tag === 'a' ? href : undefined}
       disabled={disabled}
+      ref={ref}
       {...other}
     >
       {children}
     </Component>
   )
+})
+
+Button.propTypes = {
+  /** Defines height */
+  h: PropTypes.string,
+  /** Defines left and right padding */
+  px: PropTypes.string,
+  /** Defines text color */
+  text: PropTypes.string,
+  /** Defines background color */
+  bg: PropTypes.string,
+  /** Defines hover styles */
+  hover: PropTypes.string,
+  /** Defines focus styles */
+  focus: PropTypes.string,
+  /** Defines transtion properties */
+  transition: PropTypes.string,
+  /** Set transition duration */
+  duration: PropTypes.string,
+  /** Defines border radius */
+  rounded: PropTypes.string,
+  /** Defines the HTML element used
+   * @default 'button
+   */
+  tag: PropTypes.oneOf(['button', 'a']),
+  /** Only works with anchor tag. Use with tag="a" */
+  href: PropTypes.string,
+  /** Extend current design with new styles (ones that are not listed here as props) */
+  extend: PropTypes.string,
+  /** Reset styling. Use this with extend to add your own style. */
+  reset: PropTypes.bool,
+  /** Button label */
+  children: PropTypes.any,
+  /** Disables the button */
+  disabled: PropTypes.bool,
+}
+
+Button.defaultProps = {
+  h: '10',
+  px: '5',
+  text: 'normal indigo-100',
+  bg: 'indigo-700',
+  hover: 'bg-indigo-800',
+  focus: 'shadow-outline',
+  transition: 'colors',
+  duration: '150',
+  rounded: 'lg',
 }
 
 export default Button
