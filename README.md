@@ -42,29 +42,11 @@ export default () => (
 
 You can adjust components just changing it's default properties ([check for each component's API](#components)), use the prop `extend` (expects a `string` separated by spaces) to apply any valid Tailwind CSS class in your config to add styles do the base component, or use it together with `reset` (boolean) to clear all styles and extend yourself.
 
-## 🎉 Just wanna play around?
-
-Clone this repo, get into `examples` folder and `npm install`. It will create a `create-react-app` using these components.
-
 ## 🧩 Components
 
-- [Buttons](#buttons)
+[See the documentation for all available components]()
 
-### Buttons
-
-| Prop       | Value               |
-| ---------- | ------------------- |
-| h          | '10'                |
-| px         | '5'                 |
-| text       | 'normal indigo-100' |
-| bg         | 'indigo-700'        |
-| hover      | 'bg-indigo-800'     |
-| focus      | 'shadow-outline'    |
-| transition | 'colors'            |
-| duration   | '150'               |
-| rounded    | 'lg'                |
-
-## Developing
+## 🎉 Just wanna play around?
 
 This will get you running the project and a live interface.
 
