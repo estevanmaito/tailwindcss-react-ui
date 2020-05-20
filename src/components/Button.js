@@ -53,20 +53,41 @@ const style = {
 Button.defaultProps = style
 
 function Button(props) {
+  /* eslint-disable no-unused-vars */
+  const {
+    h,
+    px,
+    text,
+    bg,
+    hover,
+    focus,
+    transition,
+    duration,
+    rounded,
+    tag,
+    extend,
+    disabled,
+    reset,
+    href,
+    children,
+    ...other
+  } = props
+  /* eslint-enable */
+
   const anchorStyle = 'inline-flex items-center'
   const disabledStyle = 'opacity-50 cursor-not-allowed'
 
   const classes = classNames(
     makeClasses(style),
-    props.tag === 'a' && anchorStyle,
-    props.extend && props.extend,
-    props.disabled && disabledStyle
+    tag === 'a' && anchorStyle,
+    extend && extend,
+    disabled && disabledStyle
   )
 
-  const classesWithReset = classNames(props.extend && props.extend)
+  const classesWithReset = classNames(extend && extend)
 
   let Component
-  switch (props.tag) {
+  switch (tag) {
     case 'a':
       Component = 'a'
       break
@@ -77,11 +98,12 @@ function Button(props) {
 
   return (
     <Component
-      className={props.reset ? classesWithReset : classes}
-      href={props.tag === 'a' ? props.href : undefined}
-      disabled={props.disabled}
+      className={reset ? classesWithReset : classes}
+      href={tag === 'a' ? href : undefined}
+      disabled={disabled}
+      {...other}
     >
-      {props.children}
+      {children}
     </Component>
   )
 }

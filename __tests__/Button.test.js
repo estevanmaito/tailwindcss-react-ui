@@ -70,7 +70,6 @@ describe('Button', () => {
 
   it('should be disabled', () => {
     const wrapper = mount(<Button disabled />)
-    console.log(wrapper.find('button[disabled]'))
 
     expect(wrapper.find('button[disabled]')).toHaveLength(1)
   })
@@ -78,8 +77,11 @@ describe('Button', () => {
   it('should contain appropriate classes when disabled', () => {
     const expected = 'opacity-50 cursor-not-allowed'
     const wrapper = mount(<Button disabled />)
-    console.log(wrapper.find('button[disabled]'))
 
     expect(wrapper.find('button[disabled]').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should call onClick callback', (done) => {
+    mount(<Button onClick={() => done()} />).simulate('click')
   })
 })
