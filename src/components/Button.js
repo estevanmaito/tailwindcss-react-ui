@@ -4,35 +4,53 @@ import makeClasses from '../utils/makeClasses'
 import PropTypes from 'prop-types'
 
 Button.propTypes = {
+  /** Defines height */
   h: PropTypes.string,
+  /** Defines left and right padding */
   px: PropTypes.string,
+  /** Defines text color */
   text: PropTypes.string,
+  /** Defines background color */
   bg: PropTypes.string,
+  /** Defines hover styles */
   hover: PropTypes.string,
+  /** Defines focus styles */
   focus: PropTypes.string,
+  /** Defines transtion properties */
   transition: PropTypes.string,
+  /** Set transition duration */
   duration: PropTypes.string,
+  /** Defines border radius */
   rounded: PropTypes.string,
-  tag: PropTypes.string,
+  /** Defines the HTML element used
+   * @default 'button
+   */
+  tag: PropTypes.oneOf(['button', 'a']),
+  /** Only works with anchor tag. Use with tag="a" */
   href: PropTypes.string,
+  /** Extend current design with new styles (ones that are not listed here as props) */
   extend: PropTypes.string,
+  /** Reset styling. Use this with extend to add your own style. */
   reset: PropTypes.bool,
+  /** Button label */
   children: PropTypes.any,
 }
 
-function Button(props) {
-  const style = {
-    h: props.h || '10',
-    px: props.px || '5',
-    text: props.text || 'normal indigo-100',
-    bg: props.bg || 'indigo-700',
-    hover: props.hover || 'bg-indigo-800',
-    focus: props.focus || 'shadow-outline',
-    transition: props.transition || 'colors',
-    duration: props.duration || '150',
-    rounded: props.rounded || 'lg',
-  }
+const style = {
+  h: '10',
+  px: '5',
+  text: 'normal indigo-100',
+  bg: 'indigo-700',
+  hover: 'bg-indigo-800',
+  focus: 'shadow-outline',
+  transition: 'colors',
+  duration: '150',
+  rounded: 'lg',
+}
 
+Button.defaultProps = style
+
+function Button(props) {
   const anchorStyle = 'inline-flex items-center'
 
   const classes = classNames(
@@ -48,6 +66,7 @@ function Button(props) {
     case 'a':
       Component = 'a'
       break
+    case 'button':
     default:
       Component = 'button'
       break

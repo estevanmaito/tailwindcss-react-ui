@@ -1,4 +1,4 @@
-Button example:
+Default button:
 
 ```js
 <Button>Click</Button>
