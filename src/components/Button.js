@@ -38,7 +38,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
 }
 
-const style = {
+Button.defaultProps = {
   h: '10',
   px: '5',
   text: 'normal indigo-100',
@@ -50,10 +50,7 @@ const style = {
   rounded: 'lg',
 }
 
-Button.defaultProps = style
-
 function Button(props) {
-  /* eslint-disable no-unused-vars */
   const {
     h,
     px,
@@ -72,13 +69,14 @@ function Button(props) {
     children,
     ...other
   } = props
-  /* eslint-enable */
+
+  const styles = { h, px, text, bg, hover, focus, transition, duration, rounded }
 
   const anchorStyle = 'inline-flex items-center'
   const disabledStyle = 'opacity-50 cursor-not-allowed'
 
   const classes = classNames(
-    makeClasses(style),
+    makeClasses(styles),
     tag === 'a' && anchorStyle,
     extend && extend,
     disabled && disabledStyle

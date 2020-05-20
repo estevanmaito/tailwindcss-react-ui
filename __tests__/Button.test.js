@@ -13,6 +13,14 @@ describe('Button', () => {
     expect(wrapper.find('button')).toHaveLength(1)
   })
 
+  it('should change background color', () => {
+    const expected =
+      'h-10 px-5 text-normal text-indigo-100 bg-red-700 hover:bg-indigo-800 focus:shadow-outline transition-colors duration-150 rounded-lg'
+    const wrapper = mount(<Button bg="red-700">Hi</Button>)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toBe(expected)
+  })
+
   it('should contain base classes', () => {
     const expected =
       'h-10 px-5 text-normal text-indigo-100 bg-indigo-700 hover:bg-indigo-800 focus:shadow-outline transition-colors duration-150 rounded-lg'
