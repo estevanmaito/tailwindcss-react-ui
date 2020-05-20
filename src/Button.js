@@ -16,6 +16,7 @@ Button.propTypes = {
   tag: PropTypes.string,
   href: PropTypes.string,
   extend: PropTypes.string,
+  reset: PropTypes.bool,
   children: PropTypes.any,
 }
 
@@ -40,6 +41,8 @@ function Button(props) {
     props.extend && props.extend
   )
 
+  const classesWithReset = classNames(props.extend && props.extend)
+
   let Component
   switch (props.tag) {
     case 'a':
@@ -51,7 +54,10 @@ function Button(props) {
   }
 
   return (
-    <Component className={classes} href={props.tag === 'a' ? props.href : undefined}>
+    <Component
+      className={props.reset ? classesWithReset : classes}
+      href={props.tag === 'a' ? props.href : undefined}
+    >
       {props.children}
     </Component>
   )

@@ -53,4 +53,18 @@ describe('Button', () => {
 
     expect(wrapper.find('button').getDOMNode().getAttribute('href')).toBeNull()
   })
+
+  it('should remove all styles using reset', () => {
+    const expected = ''
+    const wrapper = mount(<Button reset />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toBe(expected)
+  })
+
+  it('should remove all styles using reset and add extend', () => {
+    const expected = 'bg-blue-500'
+    const wrapper = mount(<Button extend="bg-blue-500" reset />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toBe(expected)
+  })
 })
