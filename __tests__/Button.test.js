@@ -67,4 +67,19 @@ describe('Button', () => {
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toBe(expected)
   })
+
+  it('should be disabled', () => {
+    const wrapper = mount(<Button disabled />)
+    console.log(wrapper.find('button[disabled]'))
+
+    expect(wrapper.find('button[disabled]')).toHaveLength(1)
+  })
+
+  it('should contain appropriate classes when disabled', () => {
+    const expected = 'opacity-50 cursor-not-allowed'
+    const wrapper = mount(<Button disabled />)
+    console.log(wrapper.find('button[disabled]'))
+
+    expect(wrapper.find('button[disabled]').getDOMNode().getAttribute('class')).toContain(expected)
+  })
 })

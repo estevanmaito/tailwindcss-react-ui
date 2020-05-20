@@ -34,6 +34,8 @@ Button.propTypes = {
   reset: PropTypes.bool,
   /** Button label */
   children: PropTypes.any,
+  /** Disables the button */
+  disabled: PropTypes.bool,
 }
 
 const style = {
@@ -52,11 +54,13 @@ Button.defaultProps = style
 
 function Button(props) {
   const anchorStyle = 'inline-flex items-center'
+  const disabledStyle = 'opacity-50 cursor-not-allowed'
 
   const classes = classNames(
     makeClasses(style),
     props.tag === 'a' && anchorStyle,
-    props.extend && props.extend
+    props.extend && props.extend,
+    props.disabled && disabledStyle
   )
 
   const classesWithReset = classNames(props.extend && props.extend)
@@ -66,7 +70,6 @@ function Button(props) {
     case 'a':
       Component = 'a'
       break
-    case 'button':
     default:
       Component = 'button'
       break
@@ -76,6 +79,7 @@ function Button(props) {
     <Component
       className={props.reset ? classesWithReset : classes}
       href={props.tag === 'a' ? props.href : undefined}
+      disabled={props.disabled}
     >
       {props.children}
     </Component>
