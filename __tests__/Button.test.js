@@ -92,4 +92,11 @@ describe('Button', () => {
   it('should call onClick callback', (done) => {
     mount(<Button onClick={() => done()} />).simulate('click')
   })
+
+  it('should contain the appropriate type', () => {
+    const expected = 'submit'
+    const wrapper = mount(<Button type="submit" />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('type')).toBe(expected)
+  })
 })

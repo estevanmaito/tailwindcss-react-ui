@@ -79,9 +79,7 @@ Button.propTypes = {
   duration: PropTypes.string,
   /** Defines border radius */
   rounded: PropTypes.string,
-  /** Defines the HTML element used
-   * @default 'button
-   */
+  /** Defines the HTML element used */
   tag: PropTypes.oneOf(['button', 'a']),
   /** Only works with anchor tag. Use with tag="a" */
   href: PropTypes.string,
@@ -93,6 +91,8 @@ Button.propTypes = {
   children: PropTypes.any,
   /** Disables the button */
   disabled: PropTypes.bool,
+  /** Defines the type attribute */
+  type: PropTypes.oneOf(['button', 'reset', 'submit', null]),
 }
 
 Button.defaultProps = {
@@ -105,6 +105,8 @@ Button.defaultProps = {
   transition: 'colors',
   duration: '150',
   rounded: 'lg',
+  tag: 'button',
+  type: 'button',
 }
 
 export default Button
