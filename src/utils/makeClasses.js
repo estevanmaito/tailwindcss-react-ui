@@ -9,6 +9,7 @@ export default function makeClasses(style) {
       return arr.concat(
         style[s].split(' ').map((i) => {
           let cls
+
           switch (s) {
             case 'hover':
             case 'focus':
@@ -17,6 +18,7 @@ export default function makeClasses(style) {
             default:
               cls = `${s}-${i}`
           }
+
           return cls
         })
       )
