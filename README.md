@@ -15,7 +15,7 @@ If you know Tailwind CSS, you already know how to use, customize and extend ever
 npm install tailwindcss-react-ui
 ```
 
-## Usage
+## 🚀 Usage
 
 ```jsx
 import React from 'React'
