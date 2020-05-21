@@ -6,12 +6,18 @@ import PropTypes from 'prop-types'
 /**
  * To style base styles of the component, look for the properties it accepts and change them.
  * For example, a component that accepts a `text` property could receive any property that you
- * would normally append with `text`. So, `text="normal gray-800"` would result in `text-normal`
- * and `text-gray-800` being applied. If you want to ADD a property, use `extend` and add to it
- * the same classes you would with normal Tailwind, like `extend="cursor-pointer"`. If you just
- * want to start from scratch, use `extend` alongside with `reset`. Below you can lots of examples.
+ * would normally append with `text`.
  *
- * See PROPS & METHODS for more details.
+ * So, `text="normal gray-800"` would result in `text-normal`
+ * and `text-gray-800` being applied.
+ *
+ * If you want to ADD a property, use `extend` and add to it
+ * the same classes you would with normal Tailwind, like `extend="cursor-pointer"`.
+ *
+ * If you just want to start from scratch, use `extend` alongside with `reset`.
+ * Below you will find tons of examples.
+ *
+ * 👇 See PROPS & METHODS for more details.
  */
 const Button = React.forwardRef(function Button(props, ref) {
   const {
