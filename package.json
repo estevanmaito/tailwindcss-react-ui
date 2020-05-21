@@ -11,6 +11,7 @@
     "build:tailwind": "npx tailwindcss build style/tailwind.css -o style/output.css",
     "predev": "npm run build:tailwind",
     "dev": "styleguidist server",
+    "build:styleguide": "styleguidist build",
     "cz": "git-cz",
     "test": "jest",
     "codecov": "codecov",
