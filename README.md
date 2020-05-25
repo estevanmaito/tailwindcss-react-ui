@@ -44,7 +44,7 @@ You can adjust components just changing it's default properties ([check for each
 
 ## 🧩 Components
 
-[See the documentation for all available components]()
+[See the documentation for all available components](https://estevanmaito.github.io/tailwindcss-react-ui/)
 
 ## 🎉 Just wanna play around?
 
